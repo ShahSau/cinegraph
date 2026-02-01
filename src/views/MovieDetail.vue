@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
-import { useRoute, useRouter, RouterLink } from 'vue-router';
+import { useRoute, RouterLink } from 'vue-router';
 import { 
   Play, Plus, Check, Clock, Calendar, 
   Globe, DollarSign, Award, ArrowLeft, Share2 

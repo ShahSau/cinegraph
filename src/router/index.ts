@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// We import Home directly so it loads fast
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({

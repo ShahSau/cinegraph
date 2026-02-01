@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Heart, HeartCrack, Users } from 'lucide-vue-next';
 
-// Import or define your types
 interface Relationship {
   id: string | number;
   name: string;

@@ -17,9 +17,7 @@ import {
   getUpcomingMovies,
 } from '@/data/movies';
 
-// Data Logic
-// Note: In Vue, if this data comes from an API later, you would use ref() or onMounted().
-// For static data, simple consts work perfectly.
+
 const featuredMovie = movies[0];
 const trending = getTrendingMovies();
 const popular = getPopularMovies();

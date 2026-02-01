@@ -3,7 +3,6 @@ import { RouterLink } from 'vue-router';
 import { Star, Film, Tv } from 'lucide-vue-next';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
-// Assuming you have the types file. If not, you can define the interface inline here.
 import type { ActorCredit } from '@/types/actor';
 
 interface Props {

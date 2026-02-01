@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { Star, Film, Heart, Trophy, Sparkles } from 'lucide-vue-next';
 
-// Define the interface for a fact
-// If you have this in @/types/actor, import it instead
 interface DidYouKnowFact {
   id: string | number;
   icon: string;

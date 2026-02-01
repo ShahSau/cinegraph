@@ -10,7 +10,6 @@ import DiscoverGrid from '@/components/discover/DiscoverGrid.vue';
 import MobileFilterSheet from '@/components/discover/MobileFilterSheet.vue';
 
 import { movies } from '@/data/movies';
-import type { Movie } from '@/types/movie';
 
 type SortOption = 'popularity' | 'rating' | 'year' | 'title';
 

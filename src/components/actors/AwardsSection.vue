@@ -7,9 +7,6 @@ import {
   TooltipTrigger,
   TooltipProvider
 } from '@/components/ui/tooltip';
-
-// Assuming you have this type defined. 
-// If not, you can define it inline like in the previous examples.
 import type { Award } from '@/types/actor';
 
 interface Props {

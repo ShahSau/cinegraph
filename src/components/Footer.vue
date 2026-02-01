@@ -16,7 +16,7 @@ const navLinks = ['Home', 'Discover', 'Search', 'Watchlist'];
               <Film class="w-5 h-5 text-primary-foreground" />
             </div>
             <span class="text-xl font-display tracking-wider text-foreground">
-              CINEMAX
+              cinegraph
             </span>
           </RouterLink>
           <p class="text-muted-foreground text-sm leading-relaxed max-w-md">
@@ -42,7 +42,7 @@ const navLinks = ['Home', 'Discover', 'Search', 'Watchlist'];
       </div>
 
       <div class="border-t border-white/5 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-        <p>© 2024 Cinemax. Built for portfolio demonstration.</p>
+        <p>© 2024 cinegraph. Built for portfolio demonstration.</p>
         <p class="text-xs">
           Data is mock/static. No real APIs.
         </p>
