@@ -26,6 +26,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tailwind.config.ts"],
+  "include": [
+  "src/**/*.ts",
+  "src/**/*.d.ts",
+  "src/**/*.tsx",
+  "src/**/*.vue",
+  "vite-env.d.ts", 
+  "tailwind.config.ts"
+],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
