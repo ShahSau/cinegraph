@@ -8,6 +8,7 @@ export const useWatchlistStore = defineStore('watchlist', () => {
 
   // 2. Initialize: Load from localStorage immediately
   const stored = localStorage.getItem('cineview-watchlist');
+  console.log('Loaded watchlist from localStorage:', stored);
   if (stored) {
     try {
       watchlist.value = JSON.parse(stored);

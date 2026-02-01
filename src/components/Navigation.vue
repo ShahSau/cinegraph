@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { useWatchlistStore } from '@/stores/watchlist';
 
 const route = useRoute();
-const watchlistStore = useWatchlistStore();
+const watchlistStore = useWatchlistStore(); // <--- FIX: Do not destructure here
 
 const isScrolled = ref(false);
 const mobileMenuOpen = ref(false);
@@ -22,7 +22,6 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
 };
 
-// Add scroll listener on mount
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
@@ -31,7 +30,6 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
 });
 
-// Close mobile menu when route changes
 watch(() => route.path, () => {
   mobileMenuOpen.value = false;
 });
@@ -73,7 +71,7 @@ watch(() => route.path, () => {
       </div>
 
       <div class="flex items-center gap-3">
-        <RouterLink
+        <!-- <RouterLink
           to="/watchlist"
           :class="cn(
             'relative p-2.5 rounded-lg transition-all duration-200',
@@ -89,7 +87,24 @@ watch(() => route.path, () => {
           >
             {{ watchlistStore.watchlist.length }}
           </span>
-        </RouterLink>
+        </RouterLink> -->
+        <RouterLink
+  to="/watchlist"
+  :class="cn(
+            'relative p-2.5 rounded-lg transition-all duration-200',
+            route.path === '/watchlist'
+              ? 'text-primary bg-primary/10'
+              : 'text-muted-foreground hover:text-foreground hover:bg-white/5'
+          )"
+>
+  <Bookmark class="w-5 h-5" />
+  <span 
+    v-if="watchlistStore.watchlist.length > 0"
+    class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center"
+  >
+    {{ watchlistStore.watchlist.length }}
+  </span>
+</RouterLink>
 
         <RouterLink
           to="/search"
