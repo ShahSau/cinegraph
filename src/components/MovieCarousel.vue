@@ -44,13 +44,13 @@ const handleScroll = () => {
       {{ title }}
     </h2>
 
-    <div class="relative group">
+    <div class="relative group/carousel">
       <button
         @click="scroll('left')"
         :class="cn(
           'absolute left-0 top-0 bottom-4 w-12 md:w-16 z-10 flex items-center justify-start pl-2',
           'bg-gradient-to-r from-background via-background/80 to-transparent',
-          'opacity-0 group-hover:opacity-100 transition-opacity duration-300',
+          'opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300',
           !showLeftArrow && 'pointer-events-none !opacity-0'
         )"
       >
@@ -64,7 +64,7 @@ const handleScroll = () => {
         :class="cn(
           'absolute right-0 top-0 bottom-4 w-12 md:w-16 z-10 flex items-center justify-end pr-2',
           'bg-gradient-to-l from-background via-background/80 to-transparent',
-          'opacity-0 group-hover:opacity-100 transition-opacity duration-300',
+          'opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300',
           !showRightArrow && 'pointer-events-none !opacity-0'
         )"
       >

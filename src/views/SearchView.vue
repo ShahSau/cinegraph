@@ -121,14 +121,19 @@ const clearSearch = () => {
 
             <TabsContent value="movies" class="mt-8">
               <div v-if="debouncedQuery">
-                <div v-if="results.length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-                  <MovieCard 
+                <div v-if="results.length > 0" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-10 sm:gap-x-8">
+                  <div 
                     v-for="(movie, index) in results" 
-                    :key="movie.id" 
-                    :movie="movie" 
-                    :index="index" 
-                    size="md" 
-                  />
+                    :key="movie.id"
+                    class="flex justify-center w-full"
+                  >
+                    <MovieCard 
+                      :movie="movie" 
+                      :index="index" 
+                      size="md" 
+                      class="!w-full"
+                    />
+                  </div>
                 </div>
                 
                 <div v-else class="text-center py-16 animate-in zoom-in-95 duration-300">
@@ -144,14 +149,19 @@ const clearSearch = () => {
               
               <div v-else>
                 <h3 class="text-lg font-display text-foreground mb-6">Popular Movies</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-                  <MovieCard 
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-10 sm:gap-x-8">
+                  <div 
                     v-for="(movie, index) in popularMovies" 
-                    :key="movie.id" 
-                    :movie="movie" 
-                    :index="index" 
-                    size="md" 
-                  />
+                    :key="movie.id"
+                    class="flex justify-center w-full"
+                  >
+                    <MovieCard 
+                      :movie="movie" 
+                      :index="index" 
+                      size="md" 
+                      class="!w-full"
+                    />
+                  </div>
                 </div>
               </div>
             </TabsContent>

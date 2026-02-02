@@ -52,7 +52,7 @@ const handleImageLoad = () => {
     :class="sizeClasses[size]"
     :style="{ animationDelay: `${index * 50}ms` }"
   >
-    <RouterLink :to="`/movie/${movie.id}`" class="group block">
+    <RouterLink :to="`/movie/${movie.id}`" class="group/card block">
       <div class="relative aspect-[2/3] overflow-hidden rounded-xl bg-card">
         
         <div v-if="!imageLoaded" class="absolute inset-0 skeleton-shimmer rounded-xl" />
@@ -62,16 +62,16 @@ const handleImageLoad = () => {
           :alt="movie.title"
           @load="handleImageLoad"
           :class="cn(
-            'w-full h-full object-cover transition-all duration-500 group-hover:scale-110',
+            'w-full h-full object-cover transition-all duration-500 group-hover/card:scale-110',
             imageLoaded ? 'opacity-100' : 'opacity-0'
           )"
         />
 
-        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-all duration-300">
           
           <div class="absolute inset-0 flex items-center justify-center">
             <div 
-              class="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 ease-out delay-100"
+              class="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg transform scale-0 group-hover/card:scale-100 transition-transform duration-300 ease-out delay-100"
               style="box-shadow: var(--shadow-glow-primary)"
             >
               <Play class="w-6 h-6 text-primary-foreground fill-current ml-1" />
@@ -115,7 +115,7 @@ const handleImageLoad = () => {
         </div>
       </div>
 
-      <h3 class="mt-3 text-sm font-medium text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+      <h3 class="mt-3 text-sm font-medium text-foreground line-clamp-2 group-hover/card:text-primary transition-colors">
         {{ movie.title }}
       </h3>
       <p class="text-xs text-muted-foreground mt-0.5">

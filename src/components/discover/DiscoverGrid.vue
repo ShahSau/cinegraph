@@ -83,14 +83,19 @@ onUnmounted(() => {
   </div>
 
   <div v-else class="space-y-8">
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-8 lg:gap-x-6 lg:gap-y-10">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-10 sm:gap-x-8 lg:gap-x-8">
       <div
         v-for="(movie, index) in visibleMovies"
         :key="movie.id"
-        class="animate-in fade-in slide-in-from-bottom-5 duration-500 fill-mode-both"
+        class="animate-in fade-in slide-in-from-bottom-5 duration-500 fill-mode-both flex justify-center w-full"
         :style="{ animationDelay: `${Math.min(index * 30, 300)}ms` }"
       >
-        <MovieCard :movie="movie" :index="index" size="md" />
+        <MovieCard 
+          :movie="movie" 
+          :index="index" 
+          size="md" 
+          class="!w-full"
+        />
       </div>
     </div>
 

@@ -29,7 +29,7 @@ const handleWatchlistClick = (e: Event) => {
 </script>
 
 <template>
-  <RouterLink :to="`/movie/${movie.id}`" class="group block">
+  <RouterLink :to="`/movie/${movie.id}`" class="group/card block">
     <div class="relative">
       <div class="relative aspect-[2/3] overflow-hidden rounded-xl bg-card border border-white/5">
         <div v-if="!imageLoaded" class="absolute inset-0 skeleton-shimmer rounded-xl" />
@@ -39,15 +39,15 @@ const handleWatchlistClick = (e: Event) => {
           :alt="movie.title"
           @load="imageLoaded = true"
           :class="cn(
-            'w-full h-full object-cover transition-all duration-500 group-hover:scale-110',
+            'w-full h-full object-cover transition-all duration-500 group-hover/card:scale-110',
             imageLoaded ? 'opacity-100' : 'opacity-0'
           )"
         />
 
-        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-all duration-300">
           <div class="absolute inset-0 flex items-center justify-center">
             <div 
-              class="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-200"
+              class="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg transform scale-0 group-hover/card:scale-100 transition-transform duration-200"
               style="box-shadow: var(--shadow-glow-primary)"
             >
               <Play class="w-6 h-6 text-primary-foreground fill-current ml-1" />
@@ -80,13 +80,13 @@ const handleWatchlistClick = (e: Event) => {
         </button>
       </div>
 
-      <div class="absolute -bottom-6 left-0 pointer-events-none">
+      <div class="absolute -bottom-12 right-0 pointer-events-none">
         <span 
           class="text-[100px] md:text-[120px] font-display font-bold leading-none select-none"
           :style="{
             WebkitTextStroke: '3px hsl(var(--primary))',
-            WebkitTextFillColor: 'hsl(var(--background))',
-            textShadow: '0 0 30px hsl(var(--primary) / 0.4)',
+            WebkitTextFillColor: 'hsl(var(--primary))',
+            textShadow: '0 0 30px hsl(var(--background) / 0.4)',
           }"
         >
           {{ rank }}
@@ -95,7 +95,7 @@ const handleWatchlistClick = (e: Event) => {
     </div>
 
     <div class="mt-8 ml-12">
-      <h3 class="text-sm font-medium text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+      <h3 class="text-sm font-medium text-foreground line-clamp-1 group-hover/card:text-primary transition-colors">
         {{ movie.title }}
       </h3>
       <p class="text-xs text-muted-foreground mt-0.5">
